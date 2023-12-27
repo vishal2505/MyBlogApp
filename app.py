@@ -58,7 +58,7 @@ def delete_post(post_id):
     print("Post delete successfully.")
     return redirect(url_for('index'))
 
-# Functions for interacting with DynamoDB (placeholders, implement later)
+# Functions for interacting with DynamoDB
 def get_posts_from_dynamodb():
     table = dynamodb.Table('BlogPosts')  # Access the table
 
@@ -122,4 +122,4 @@ def generate_unique_id():
     return unique_id
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
