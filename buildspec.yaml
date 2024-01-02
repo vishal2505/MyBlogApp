@@ -7,9 +7,9 @@ phases:
 
   build:
     commands:
-      - docker build -t ${ECR_REPOSITORY}:blue .
+      - docker build -t ${ECR_REPOSITORY}:green .
 
   post_build:
     commands:
     - aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REPOSITORY}
-    - docker push ${ECR_REPOSITORY}:blue
+    - docker push ${ECR_REPOSITORY}:green
